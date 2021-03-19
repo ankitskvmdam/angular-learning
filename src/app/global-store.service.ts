@@ -19,6 +19,13 @@ export class GlobalStoreService {
     new TraineesModel('Jim', 'Vue', '2020-5-18', '2020-5-27'),
   ];
 
+  snackbar = {
+    isVisible: false,
+    message: '',
+  };
+
+  timeout: any = null;
+
   getTrainees() {
     return this.trainees;
   }
@@ -29,5 +36,24 @@ export class GlobalStoreService {
 
   addTrainees(trainee: TraineesModel) {
     this.trainees.push(trainee);
+  }
+
+  showSnackbar(message: string) {
+    if (this.timeout) {
+      clearTimeout(this.timeout);
+    }
+
+    this.timeout = setTimeout(() => {
+      this.snackbar.isVisible = false;
+    }, 5000);
+
+    this.snackbar = {
+      isVisible: true,
+      message,
+    };
+  }
+
+  getSnackbarDetail() {
+    return this.snackbar;
   }
 }

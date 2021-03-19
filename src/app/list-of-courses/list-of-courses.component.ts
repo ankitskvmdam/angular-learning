@@ -16,4 +16,8 @@ export class ListOfCoursesComponent implements OnInit {
   getTrainees() {
     return this.globalStore.getTrainees();
   }
+
+  getSnackbar() {
+    return this.globalStore.getSnackbarDetail();
+  }
 }

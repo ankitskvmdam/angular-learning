@@ -1,6 +1,7 @@
 
-<!-- <li *ngFor="let trainee of getTrainees()">Name: {{ trainee.traineeName }} id: {{ trainee.id }}</li>-->
-
+<div class="global-snackbar" *ngIf="getSnackbar().isVisible">
+    {{ getSnackbar().message }}
+</div>
 <table class="table">
     <thead class="thead">
         <tr class="tr">

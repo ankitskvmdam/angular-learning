@@ -67,17 +67,6 @@ export class ApplyCoursesComponent implements OnInit {
     }
   }
 
-  addData() {
-    const newTrainee = new TraineesModel(
-      this.traineeName,
-      this.courseName,
-      this.joiningDate,
-      this.courseDate
-    );
-
-    this.globalStore.addTrainees(newTrainee);
-  }
-
   checkAndAddData() {
     if (this.isFormValid()) {
       const newTrainee = new TraineesModel(
@@ -88,6 +77,9 @@ export class ApplyCoursesComponent implements OnInit {
       );
 
       this.globalStore.addTrainees(newTrainee);
+      this.globalStore.showSnackbar(
+        `Trainee '${this.traineeName}' added successfully.`
+      );
       this.router.navigate([`/${VIEW_ALL_COURSES_PATH}`]);
     }
   }
