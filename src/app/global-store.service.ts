@@ -11,7 +11,7 @@ export class GlobalStoreService {
   courses: any[] = [
     { value: 'MEAN', text: 'MEAN' },
     { value: 'MERN', text: 'MERN' },
-    { value: 'VUE', text: 'Vue' },
+    { value: 'Vue', text: 'Vue' },
   ];
   trainees: TraineesModel[] = [
     new TraineesModel('Ram', 'MEAN', '2020-5-18', '2020-5-27'),
