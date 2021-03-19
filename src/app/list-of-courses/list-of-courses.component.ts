@@ -1,7 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-// Model
-import { TraineesModel } from '../../models/trainees.model';
+import { GlobalStoreService } from '../global-store.service';
 
 @Component({
   selector: 'app-list-of-courses',
@@ -9,9 +8,12 @@ import { TraineesModel } from '../../models/trainees.model';
   styleUrls: ['./list-of-courses.component.css'],
 })
 export class ListOfCoursesComponent implements OnInit {
-  @Input() trainees: TraineesModel[] = [];
-
-  constructor() {}
+  headers = ['Trainee Name', 'Course Name', 'Joining Date', 'Course Date'];
+  constructor(private globalStore: GlobalStoreService) {}
 
   ngOnInit(): void {}
+
+  getTrainees() {
+    return this.globalStore.getTrainees();
+  }
 }

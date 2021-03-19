@@ -5,6 +5,7 @@ import { ROUTES_PATH } from '../common/constants';
 
 // Model
 import { TraineesModel } from '../models/trainees.model';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
